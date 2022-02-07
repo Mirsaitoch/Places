@@ -81,7 +81,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
+        print("rfiuvehiuvd")
+
         let place = places[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
             
@@ -90,7 +91,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         return [deleteAction]
     }
-    
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
         sorting()
     }
