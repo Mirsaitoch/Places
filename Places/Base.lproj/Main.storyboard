@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eu3-dc-bnc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eu3-dc-bnc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,16 +43,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="262"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-kK-ra6">
-                                                    <rect key="frame" x="0.0" y="-32" width="414" height="291"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-kK-ra6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="262"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="262" id="sZT-Gg-nUV"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                             <constraints>
                                                 <constraint firstItem="PaA-kK-ra6" firstAttribute="leading" secondItem="xpm-Iy-R4b" secondAttribute="leading" id="I6G-Si-qwu"/>
-                                                <constraint firstItem="PaA-kK-ra6" firstAttribute="top" secondItem="xpm-Iy-R4b" secondAttribute="top" id="lU1-9j-Qcg"/>
                                                 <constraint firstAttribute="bottom" secondItem="PaA-kK-ra6" secondAttribute="bottom" id="rbf-8B-yqj"/>
                                                 <constraint firstAttribute="trailing" secondItem="PaA-kK-ra6" secondAttribute="trailing" id="tcl-7r-CA4"/>
+                                                <constraint firstItem="PaA-kK-ra6" firstAttribute="top" secondItem="xpm-Iy-R4b" secondAttribute="top" id="wYh-zo-Pq2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -173,6 +176,44 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="140" id="Wxy-mZ-U8a">
+                                        <rect key="frame" x="0.0" y="546.5" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wxy-mZ-U8a" id="CnX-nM-UOC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mna-wC-luI" customClass="RatingControl" customModule="Places" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="270" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Zs-VH-I1y" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="72" y="45" width="270" height="50"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="50"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mna-wC-luI" firstAttribute="centerY" secondItem="CnX-nM-UOC" secondAttribute="centerY" id="fw3-69-CFD"/>
+                                                <constraint firstItem="7Zs-VH-I1y" firstAttribute="centerX" secondItem="CnX-nM-UOC" secondAttribute="centerX" id="jiV-LY-1oK"/>
+                                                <constraint firstItem="7Zs-VH-I1y" firstAttribute="centerY" secondItem="CnX-nM-UOC" secondAttribute="centerY" id="kQs-cE-pbL"/>
+                                                <constraint firstItem="Mna-wC-luI" firstAttribute="centerX" secondItem="CnX-nM-UOC" secondAttribute="centerX" id="w2t-ug-vCo"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Mna-wC-luI"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -196,17 +237,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ImageOFPlace" destination="PaA-kK-ra6" id="4K9-HE-Gq5"/>
+                        <outlet property="cosmosView" destination="7Zs-VH-I1y" id="WJd-A5-BHI"/>
                         <outlet property="placeImage" destination="PaA-kK-ra6" id="64m-7o-TfI"/>
                         <outlet property="placeLocation" destination="4RK-qq-DcL" id="1Rc-sa-aBz"/>
                         <outlet property="placeName" destination="fDE-ui-YwS" id="0bT-OC-Viq"/>
                         <outlet property="placeType" destination="zSC-qJ-h6f" id="Cep-KF-0Id"/>
+                        <outlet property="ratingControl" destination="Mna-wC-luI" id="GCe-hR-edP"/>
                         <outlet property="save" destination="ppW-BW-Pm9" id="kWQ-1Y-G8t"/>
                     </connections>
                 </tableViewController>
                 <exit id="2H9-tz-ODW" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQG-XM-xHI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1535" y="-271"/>
+            <point key="canvasLocation" x="1534.7826086956522" y="-271.20535714285711"/>
         </scene>
         <!--Places-->
         <scene sceneID="MUF-hr-YM7">
@@ -226,9 +269,8 @@
                                     <action selector="sortSelection:" destination="CJ5-FJ-Sll" eventType="valueChanged" id="hxu-iv-zy6"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Hfp-Sk-kYU">
-                                <rect key="frame" x="0.0" y="178" width="414" height="734"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hfp-Sk-kYU">
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Kke-io-R32" customClass="CustomTableViewCell" customModule="Places" customModuleProvider="target">
@@ -239,46 +281,66 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IxC-0c-gJO">
-                                                    <rect key="frame" x="15" y="7.5" width="70" height="70"/>
+                                                    <rect key="frame" x="15" y="8" width="65" height="69"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="EKi-hi-nwE"/>
-                                                        <constraint firstAttribute="height" constant="70" id="WBo-Sa-T4L"/>
+                                                        <constraint firstAttribute="width" constant="65" id="7Uu-f9-tjB"/>
+                                                        <constraint firstAttribute="height" constant="65" id="ZKc-8U-dwb"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="95" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="wyz-Mb-jWF" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="314" y="57" width="90" height="20"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="aQg-yo-C2N"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gUM-6k-RsG">
-                                                    <rect key="frame" x="101" y="8" width="297" height="69"/>
+                                                    <rect key="frame" x="95" y="8" width="211" height="62"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8b-l2-Eia">
-                                                            <rect key="frame" x="0.0" y="0.0" width="297" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="211" height="22"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG7-yT-Yx7">
-                                                            <rect key="frame" x="0.0" y="26.5" width="297" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="24" width="211" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tr-nf-4qA">
-                                                            <rect key="frame" x="0.0" y="49" width="297" height="20"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="211" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="205" id="R95-JN-7KX"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="IxC-0c-gJO" firstAttribute="centerY" secondItem="eFm-W0-I4s" secondAttribute="centerY" id="G3M-gW-fEg"/>
-                                                <constraint firstAttribute="trailing" secondItem="gUM-6k-RsG" secondAttribute="trailing" constant="16" id="GCu-H3-SgK"/>
-                                                <constraint firstItem="gUM-6k-RsG" firstAttribute="top" secondItem="eFm-W0-I4s" secondAttribute="top" constant="8" id="TuE-VW-D3X"/>
-                                                <constraint firstItem="gUM-6k-RsG" firstAttribute="leading" secondItem="IxC-0c-gJO" secondAttribute="trailing" constant="16" id="dfB-bW-Xi1"/>
-                                                <constraint firstAttribute="bottom" secondItem="gUM-6k-RsG" secondAttribute="bottom" constant="8" id="kLF-DS-vwF"/>
-                                                <constraint firstItem="IxC-0c-gJO" firstAttribute="leading" secondItem="eFm-W0-I4s" secondAttribute="leading" constant="15" id="p4O-Pf-uvs"/>
+                                                <constraint firstAttribute="trailing" secondItem="wyz-Mb-jWF" secondAttribute="trailing" constant="10" id="5RW-OF-RJs"/>
+                                                <constraint firstItem="wyz-Mb-jWF" firstAttribute="leading" secondItem="gUM-6k-RsG" secondAttribute="trailing" constant="8" id="Fug-jI-tjz"/>
+                                                <constraint firstAttribute="bottom" secondItem="wyz-Mb-jWF" secondAttribute="bottom" constant="8" id="HMe-s7-oxu"/>
+                                                <constraint firstItem="gUM-6k-RsG" firstAttribute="leading" secondItem="IxC-0c-gJO" secondAttribute="trailing" constant="15" id="RTC-h7-Uog"/>
+                                                <constraint firstItem="gUM-6k-RsG" firstAttribute="top" secondItem="eFm-W0-I4s" secondAttribute="top" constant="8" id="SYb-sF-6KG"/>
+                                                <constraint firstItem="IxC-0c-gJO" firstAttribute="centerY" secondItem="eFm-W0-I4s" secondAttribute="centerY" id="hM2-3d-3k5"/>
+                                                <constraint firstItem="IxC-0c-gJO" firstAttribute="leading" secondItem="eFm-W0-I4s" secondAttribute="leading" constant="15" id="rRo-hb-0Cw"/>
+                                                <constraint firstItem="IxC-0c-gJO" firstAttribute="top" secondItem="gUM-6k-RsG" secondAttribute="top" id="s4J-zK-uA5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="wyz-Mb-jWF" id="XjW-Jn-3EW"/>
                                             <outlet property="imageOfPlace" destination="IxC-0c-gJO" id="dv2-XI-UvC"/>
                                             <outlet property="locationLabel" destination="gG7-yT-Yx7" id="54a-Pp-NBR"/>
                                             <outlet property="nameLabel" destination="q8b-l2-Eia" id="a6K-QW-SfC"/>
@@ -296,10 +358,15 @@
                         <viewLayoutGuide key="safeArea" id="L7S-Kr-MyF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YPC-X6-ieK" firstAttribute="height" secondItem="Hfp-Sk-kYU" secondAttribute="height" multiplier="0.0419486" id="JfA-HG-4sU"/>
-                            <constraint firstItem="L7S-Kr-MyF" firstAttribute="trailing" secondItem="YPC-X6-ieK" secondAttribute="trailing" id="cGB-Tz-GvF"/>
-                            <constraint firstItem="YPC-X6-ieK" firstAttribute="top" secondItem="L7S-Kr-MyF" secondAttribute="top" id="fRu-jB-PGF"/>
-                            <constraint firstItem="YPC-X6-ieK" firstAttribute="leading" secondItem="L7S-Kr-MyF" secondAttribute="leading" id="msc-pt-sUo"/>
+                            <constraint firstAttribute="bottom" secondItem="Hfp-Sk-kYU" secondAttribute="bottom" id="0Hu-ZW-dWZ"/>
+                            <constraint firstItem="YPC-X6-ieK" firstAttribute="trailing" secondItem="L7S-Kr-MyF" secondAttribute="trailing" id="7S9-QG-0vY"/>
+                            <constraint firstItem="Hfp-Sk-kYU" firstAttribute="top" secondItem="YPC-X6-ieK" secondAttribute="bottom" constant="1" id="Nix-09-LFN"/>
+                            <constraint firstItem="Hfp-Sk-kYU" firstAttribute="top" secondItem="YPC-X6-ieK" secondAttribute="bottom" constant="1" id="Tjg-Ew-WxL"/>
+                            <constraint firstItem="YPC-X6-ieK" firstAttribute="leading" secondItem="L7S-Kr-MyF" secondAttribute="leading" id="VzN-bX-SZA"/>
+                            <constraint firstItem="Hfp-Sk-kYU" firstAttribute="top" secondItem="YPC-X6-ieK" secondAttribute="bottom" constant="1" id="XEm-Ap-T4u"/>
+                            <constraint firstItem="Hfp-Sk-kYU" firstAttribute="trailing" secondItem="L7S-Kr-MyF" secondAttribute="trailing" id="XFf-ij-b78"/>
+                            <constraint firstItem="Hfp-Sk-kYU" firstAttribute="leading" secondItem="L7S-Kr-MyF" secondAttribute="leading" id="cG6-VP-sA8"/>
+                            <constraint firstItem="YPC-X6-ieK" firstAttribute="top" secondItem="L7S-Kr-MyF" secondAttribute="top" id="whD-R5-14p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Places" id="e6B-jS-V7h">
@@ -341,12 +408,22 @@
             <point key="canvasLocation" x="-136" y="-271"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7Zs-VH-I1y">
+            <size key="intrinsicContentSize" width="270" height="50"/>
+        </designable>
+        <designable name="wyz-Mb-jWF">
+            <size key="intrinsicContentSize" width="95" height="20"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="6Dc-ha-IYY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

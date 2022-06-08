@@ -1,23 +1,34 @@
 import UIKit
 
+import Cosmos
+
 class NewPlaceTableViewController: UITableViewController {
     
     var imageIsChanged = false
     
-    var currentPlace: Place?
+    var currentPlace: Place!
+    
+    var currentRating = 0.0
     
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var save: UIBarButtonItem!
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
-
+    @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var ImageOFPlace: UIImageView!
+    @IBOutlet var cosmosView: CosmosView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
         save.isEnabled = false
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
+
+        cosmosView.settings.fillMode = .half
+        cosmosView.didTouchCosmos = {rating in
+            self.currentRating  = rating}
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -52,7 +63,11 @@ class NewPlaceTableViewController: UITableViewController {
         
         let imageData = image?.pngData()
         
-        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData)
+        let newPlace = Place(name: placeName.text!,
+                             location: placeLocation.text,
+                             type: placeType.text,
+                             imageData: imageData,
+                             rating: currentRating)
         
         if currentPlace != nil {
             try! realm.write {
@@ -60,6 +75,9 @@ class NewPlaceTableViewController: UITableViewController {
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace.rating = newPlace.rating
+                print("qqqqqqqqqq")
+                print(newPlace.rating)
             }
         } else {
             StorageManager.saveObject(newPlace)
@@ -68,7 +86,10 @@ class NewPlaceTableViewController: UITableViewController {
     
     private func setupEditScreen(){
         if currentPlace != nil{
+            imageIsChanged = true
+            
             guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
+
             navigationItem.leftBarButtonItem = nil
             save.isEnabled = true
             placeImage.image = image
@@ -76,6 +97,9 @@ class NewPlaceTableViewController: UITableViewController {
             placeName.text = currentPlace?.name
             placeType.text = currentPlace?.type
             placeLocation.text = currentPlace?.location
+            cosmosView?.rating = currentPlace.rating
+            print("ergergergergergerger")
+            print(currentPlace.rating)
         }
     }
     

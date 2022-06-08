@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4B2B74284DF0AF00246862 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B2B73284DF0AF00246862 /* RatingControl.swift */; };
 		3B53B9CF277B889C00DE5483 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9CE277B889C00DE5483 /* AppDelegate.swift */; };
 		3B53B9D1277B889C00DE5483 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9D0277B889C00DE5483 /* SceneDelegate.swift */; };
 		3B53B9D6277B889C00DE5483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B9D4277B889C00DE5483 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B4B2B73284DF0AF00246862 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3B53B9CB277B889C00DE5483 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B9CE277B889C00DE5483 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B53B9D0277B889C00DE5483 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,10 +86,11 @@
 				3B53B9E2277B905A00DE5483 /* TableViewController.swift */,
 				3B53B9E4277C7F1C00DE5483 /* CustomTableViewCell.swift */,
 				3BD7B5372782022D00C777B3 /* NewPlaceTableViewController.swift */,
-				3B53B9D4277B889C00DE5483 /* Main.storyboard */,
+				3B4B2B73284DF0AF00246862 /* RatingControl.swift */,
 				3BD7B5352781A87D00C777B3 /* PlaceModel.swift */,
 				3B9685852788C1A400E9588E /* StorageManager.swift */,
 				3B53B9D7277B889E00DE5483 /* Assets.xcassets */,
+				3B53B9D4277B889C00DE5483 /* Main.storyboard */,
 				3B53B9D9277B889E00DE5483 /* LaunchScreen.storyboard */,
 				3B53B9DC277B889E00DE5483 /* Info.plist */,
 			);
@@ -149,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 3B53B9C2277B889C00DE5483;
+			packageReferences = (
+				3BFBF75228514E9000F68B95 /* XCRemoteSwiftPackageReference "Cosmos" */,
+			);
 			productRefGroup = 3B53B9CC277B889C00DE5483 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,6 +228,7 @@
 				3B53B9CF277B889C00DE5483 /* AppDelegate.swift in Sources */,
 				3B53B9E3277B905A00DE5483 /* TableViewController.swift in Sources */,
 				3B9685862788C1A400E9588E /* StorageManager.swift in Sources */,
+				3B4B2B74284DF0AF00246862 /* RatingControl.swift in Sources */,
 				3BD7B5362781A87D00C777B3 /* PlaceModel.swift in Sources */,
 				3B53B9E5277C7F1C00DE5483 /* CustomTableViewCell.swift in Sources */,
 				3B53B9D1277B889C00DE5483 /* SceneDelegate.swift in Sources */,
@@ -446,6 +453,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3BFBF75228514E9000F68B95 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 3B53B9C3277B889C00DE5483 /* Project object */;
 }

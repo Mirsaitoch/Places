@@ -1,10 +1,12 @@
 import UIKit
 import RealmSwift
+import Cosmos
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var reversedSort: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +53,15 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             place = places[indexPath.row]
 
         }
+        cell.cosmosView.settings.fillMode = .half
+        cell.cosmosView.rating = place.rating
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
+        
         return cell
     }
     
@@ -81,8 +86,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        print("rfiuvehiuvd")
-
         let place = places[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
             
