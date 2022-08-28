@@ -18,6 +18,10 @@ class NewPlaceTableViewController: UITableViewController {
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var ImageOFPlace: UIImageView!
     @IBOutlet var cosmosView: CosmosView!
+    @IBOutlet var mapButton: UIButton!
+    
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +30,21 @@ class NewPlaceTableViewController: UITableViewController {
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
 
-        cosmosView.settings.fillMode = .half
+        cosmosView.settings.fillMode = .full
         cosmosView.didTouchCosmos = {rating in
             self.currentRating  = rating}
+        
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold, scale: .large)
+
+        let largeBoldDoc =  UIImage(systemName: "map.circle", withConfiguration: largeConfig)
+        
+        mapButton.setImage(largeBoldDoc, for: .normal)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
         if indexPath.row == 0{
-            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let actionSheet = UIAlertController(title: nil , message: "choose where to upload the photo from", preferredStyle: .actionSheet)
             let camera = UIAlertAction(title: "Camera", style: .default){_ in
                 self.chooseImage(source: .camera)
             }
@@ -51,15 +62,30 @@ class NewPlaceTableViewController: UITableViewController {
             view.endEditing(true)
         }
     }
-    func saveNewPlace(){
-        var image: UIImage?
-//        print("git test")
-
-        if imageIsChanged{
-            image = placeImage.image
-        }else{
-            image = #imageLiteral(resourceName: "imagePlaceholder")
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard
+        let identifier = segue.identifier,
+        let mapVC = segue.destination as? MapViewController
+        else { return }
+        
+        mapVC.incomeIdentifier = identifier
+        mpVC.mapViewControllerDelegate = self
+        
+        if identifier == "showMap"{
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text!
+            mapVC.place.type = placeType.text!
+            mapVC.place.imageData = placeImage.image?.pngData()
         }
+        
+
+
+    }
+    func saveNewPlace(){
+        let image = imageIsChanged ? placeImage.image :  #imageLiteral(resourceName: "imagePlaceholder")
         
         let imageData = image?.pngData()
         
@@ -75,14 +101,16 @@ class NewPlaceTableViewController: UITableViewController {
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
-                currentPlace.rating = newPlace.rating
-                print("qqqqqqqqqq")
+                currentPlace?.rating = newPlace.rating
                 print(newPlace.rating)
+                print(currentRating)
             }
         } else {
             StorageManager.saveObject(newPlace)
         }
     }
+    
+    
     
     private func setupEditScreen(){
         if currentPlace != nil{
@@ -98,7 +126,6 @@ class NewPlaceTableViewController: UITableViewController {
             placeType.text = currentPlace?.type
             placeLocation.text = currentPlace?.location
             cosmosView?.rating = currentPlace.rating
-            print("ergergergergergerger")
             print(currentPlace.rating)
         }
     }
@@ -124,8 +151,6 @@ extension NewPlaceTableViewController: UITextFieldDelegate{
             save.isEnabled = false
         }
     }
-    
-    
 }
 
 extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -137,7 +162,6 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
             imagePicker.sourceType = source
             present(imagePicker, animated: true)
         }
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -152,4 +176,8 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
     
 }
 
-
+extension NewPlaceTableViewController: MapViewControllerDelegate{
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+    }
+}

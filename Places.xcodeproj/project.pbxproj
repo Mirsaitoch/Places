@@ -16,9 +16,10 @@
 		3B53B9E3277B905A00DE5483 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E2277B905A00DE5483 /* TableViewController.swift */; };
 		3B53B9E5277C7F1C00DE5483 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E4277C7F1C00DE5483 /* CustomTableViewCell.swift */; };
 		3B9685862788C1A400E9588E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9685852788C1A400E9588E /* StorageManager.swift */; };
+		3B9E29B12868792600B6D901 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9E29B02868792600B6D901 /* MapViewController.swift */; };
 		3BD7B5362781A87D00C777B3 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B5352781A87D00C777B3 /* PlaceModel.swift */; };
 		3BD7B5382782022D00C777B3 /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD7B5372782022D00C777B3 /* NewPlaceTableViewController.swift */; };
-		57B2DDE8C3BF2D1F8D4BAC3F /* Pods_Places.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681B181817BA6369566D3B8E /* Pods_Places.framework */; };
+		EA8694A1CAC7BC354D52B7A3 /* Pods_Places.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7D6AEDA20668385649D2F0 /* Pods_Places.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +34,12 @@
 		3B53B9E2277B905A00DE5483 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		3B53B9E4277C7F1C00DE5483 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3B9685852788C1A400E9588E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3B9E29B02868792600B6D901 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3BD7B5352781A87D00C777B3 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		3BD7B5372782022D00C777B3 /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
-		681B181817BA6369566D3B8E /* Pods_Places.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E425083BD9F83CC65B828352 /* Pods-Places.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places.release.xcconfig"; path = "Target Support Files/Pods-Places/Pods-Places.release.xcconfig"; sourceTree = "<group>"; };
-		FA750D6A143265B454CDF516 /* Pods-Places.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places.debug.xcconfig"; path = "Target Support Files/Pods-Places/Pods-Places.debug.xcconfig"; sourceTree = "<group>"; };
+		5C7D6AEDA20668385649D2F0 /* Pods_Places.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Places.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F29CE5CDAC536C34C642397E /* Pods-Places.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places.release.xcconfig"; path = "Target Support Files/Pods-Places/Pods-Places.release.xcconfig"; sourceTree = "<group>"; };
+		F6BB3182D362800F9B9351A3 /* Pods-Places.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Places.debug.xcconfig"; path = "Target Support Files/Pods-Places/Pods-Places.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,28 +47,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B2DDE8C3BF2D1F8D4BAC3F /* Pods_Places.framework in Frameworks */,
+				EA8694A1CAC7BC354D52B7A3 /* Pods_Places.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15F8932BF8C7A9CFFCCA2649 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				681B181817BA6369566D3B8E /* Pods_Places.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3B53B9C2277B889C00DE5483 = {
 			isa = PBXGroup;
 			children = (
 				3B53B9CD277B889C00DE5483 /* Places */,
 				3B53B9CC277B889C00DE5483 /* Products */,
 				EBEB9E5FD1661EC1711DA9A4 /* Pods */,
-				15F8932BF8C7A9CFFCCA2649 /* Frameworks */,
+				7F74856D2FF58F1EC0D9FEF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +83,7 @@
 				3B4B2B73284DF0AF00246862 /* RatingControl.swift */,
 				3BD7B5352781A87D00C777B3 /* PlaceModel.swift */,
 				3B9685852788C1A400E9588E /* StorageManager.swift */,
+				3B9E29B02868792600B6D901 /* MapViewController.swift */,
 				3B53B9D7277B889E00DE5483 /* Assets.xcassets */,
 				3B53B9D4277B889C00DE5483 /* Main.storyboard */,
 				3B53B9D9277B889E00DE5483 /* LaunchScreen.storyboard */,
@@ -97,11 +92,19 @@
 			path = Places;
 			sourceTree = "<group>";
 		};
+		7F74856D2FF58F1EC0D9FEF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C7D6AEDA20668385649D2F0 /* Pods_Places.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EBEB9E5FD1661EC1711DA9A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FA750D6A143265B454CDF516 /* Pods-Places.debug.xcconfig */,
-				E425083BD9F83CC65B828352 /* Pods-Places.release.xcconfig */,
+				F6BB3182D362800F9B9351A3 /* Pods-Places.debug.xcconfig */,
+				F29CE5CDAC536C34C642397E /* Pods-Places.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -113,11 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B53B9DF277B889E00DE5483 /* Build configuration list for PBXNativeTarget "Places" */;
 			buildPhases = (
-				95DAFC0CB03395DD5864A2A5 /* [CP] Check Pods Manifest.lock */,
+				E09470B3E20A7CE948B6CABF /* [CP] Check Pods Manifest.lock */,
 				3B53B9C7277B889C00DE5483 /* Sources */,
 				3B53B9C8277B889C00DE5483 /* Frameworks */,
 				3B53B9C9277B889C00DE5483 /* Resources */,
-				3281A4A0988F15363B2FD7CF /* [CP] Embed Pods Frameworks */,
+				B7021A5B9BED574C23B2DC99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,9 +155,6 @@
 				Base,
 			);
 			mainGroup = 3B53B9C2277B889C00DE5483;
-			packageReferences = (
-				3BFBF75228514E9000F68B95 /* XCRemoteSwiftPackageReference "Cosmos" */,
-			);
 			productRefGroup = 3B53B9CC277B889C00DE5483 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -178,7 +178,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3281A4A0988F15363B2FD7CF /* [CP] Embed Pods Frameworks */ = {
+		B7021A5B9BED574C23B2DC99 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,7 +195,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Places/Pods-Places-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95DAFC0CB03395DD5864A2A5 /* [CP] Check Pods Manifest.lock */ = {
+		E09470B3E20A7CE948B6CABF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -228,6 +228,7 @@
 				3B53B9CF277B889C00DE5483 /* AppDelegate.swift in Sources */,
 				3B53B9E3277B905A00DE5483 /* TableViewController.swift in Sources */,
 				3B9685862788C1A400E9588E /* StorageManager.swift in Sources */,
+				3B9E29B12868792600B6D901 /* MapViewController.swift in Sources */,
 				3B4B2B74284DF0AF00246862 /* RatingControl.swift in Sources */,
 				3BD7B5362781A87D00C777B3 /* PlaceModel.swift in Sources */,
 				3B53B9E5277C7F1C00DE5483 /* CustomTableViewCell.swift in Sources */,
@@ -375,7 +376,7 @@
 		};
 		3B53B9E0277B889E00DE5483 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA750D6A143265B454CDF516 /* Pods-Places.debug.xcconfig */;
+			baseConfigurationReference = F6BB3182D362800F9B9351A3 /* Pods-Places.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -404,7 +405,7 @@
 		};
 		3B53B9E1277B889E00DE5483 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E425083BD9F83CC65B828352 /* Pods-Places.release.xcconfig */;
+			baseConfigurationReference = F29CE5CDAC536C34C642397E /* Pods-Places.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -453,17 +454,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3BFBF75228514E9000F68B95 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 3B53B9C3277B889C00DE5483 /* Project object */;
 }
