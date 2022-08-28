@@ -169,7 +169,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="5OE-Py-So4" kind="show" identifier="showLocation" id="GYM-Tv-Ojk"/>
+                                                        <segue destination="5OE-Py-So4" kind="push" identifier="showLocation" id="GYM-Tv-Ojk"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -314,15 +314,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-Oq-EKn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-Oq-EKn">
                                 <rect key="frame" x="187" y="446.5" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="n7d-5M-jd3"/>
-                                    <constraint firstAttribute="height" constant="40" id="nJS-5y-1mq"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-Ug-2fw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-Ug-2fw">
                                 <rect key="frame" x="20" y="203" width="374" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Selected address">
                                         <attributes>
@@ -335,40 +333,33 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-qo-6Qz">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-qo-6Qz">
                                 <rect key="frame" x="132" y="752" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="LRb-0T-Z0d"/>
-                                    <constraint firstAttribute="width" constant="150" id="ZdR-Z8-Hwx"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="done"/>
                                 <connections>
-                                    <action selector="doneAdress:" destination="5OE-Py-So4" eventType="touchUpInside" id="a0X-UT-RU1"/>
+                                    <action selector="getAddress" destination="5OE-Py-So4" eventType="touchUpInside" id="tUu-Ns-SWW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-yV-Ikp">
+                                <rect key="frame" x="132" y="752" width="150" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Let's go!"/>
+                                <connections>
+                                    <action selector="goButton" destination="5OE-Py-So4" eventType="touchUpInside" id="6cA-Ua-1w5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lND-N6-sDY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="V9O-Oq-EKn" firstAttribute="centerX" secondItem="ipk-8L-vuM" secondAttribute="centerX" id="3wA-2R-b6B"/>
-                            <constraint firstItem="lND-N6-sDY" firstAttribute="trailing" secondItem="cmh-Ug-2fw" secondAttribute="trailing" constant="20" id="AqZ-7s-Mml"/>
-                            <constraint firstItem="iLC-qo-6Qz" firstAttribute="centerX" secondItem="ipk-8L-vuM" secondAttribute="centerX" id="B6H-jE-bb5"/>
-                            <constraint firstItem="cmh-Ug-2fw" firstAttribute="top" secondItem="lND-N6-sDY" secondAttribute="top" constant="115" id="Qcs-jI-Pql"/>
-                            <constraint firstItem="V9O-Oq-EKn" firstAttribute="centerY" secondItem="ipk-8L-vuM" secondAttribute="centerY" constant="19" id="XDk-bx-MpJ"/>
-                            <constraint firstItem="cmh-Ug-2fw" firstAttribute="leading" secondItem="lND-N6-sDY" secondAttribute="leading" constant="20" id="Z3f-4O-5zC"/>
-                            <constraint firstItem="lND-N6-sDY" firstAttribute="bottom" secondItem="iLC-qo-6Qz" secondAttribute="bottom" constant="60" id="kxb-G2-ABA"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7zI-RQ-pyi">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Laa-5Z-3eQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ITL-AY-jEO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ITL-AY-jEO">
                                 <rect key="frame" x="50" y="0.0" width="344" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4aA-aj-1dH"/>
-                                    <constraint firstAttribute="width" constant="50" id="96j-wb-DfE"/>
-                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <imageReference key="image" image="location" catalog="system" symbolScale="large"/>
@@ -386,6 +377,7 @@
                         <outlet property="MapView" destination="GH2-fC-gXJ" id="Djp-Re-EwD"/>
                         <outlet property="addressLabel" destination="cmh-Ug-2fw" id="8sz-SA-2Aw"/>
                         <outlet property="doneButton" destination="iLC-qo-6Qz" id="dhJ-Ma-Ajh"/>
+                        <outlet property="gotoButton" destination="hoV-yV-Ikp" id="bQP-g6-Ou9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMo-3D-poZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -563,7 +555,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="CQE-9f-8Wz"/>
+        <segue reference="GYM-Tv-Ojk"/>
         <segue reference="6Dc-ha-IYY"/>
     </inferredMetricsTieBreakers>
     <resources>

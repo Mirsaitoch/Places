@@ -72,7 +72,7 @@ class NewPlaceTableViewController: UITableViewController {
         else { return }
         
         mapVC.incomeIdentifier = identifier
-        mpVC.mapViewControllerDelegate = self
+        mapVC.mapViewControllerDelegate = self
         
         if identifier == "showMap"{
             mapVC.place.name = placeName.text!
