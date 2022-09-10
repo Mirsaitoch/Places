@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="1535" y="-943"/>
         </scene>
-        <!--Add new place-->
+        <!--New place-->
         <scene sceneID="zJh-5B-BDB">
             <objects>
                 <tableViewController id="iWH-YI-hfp" customClass="NewPlaceTableViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
@@ -272,7 +272,7 @@
                             <outlet property="delegate" destination="iWH-YI-hfp" id="JJO-fw-4UP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add new place" largeTitleDisplayMode="always" id="Rop-dq-3Ks">
+                    <navigationItem key="navigationItem" title="New place" largeTitleDisplayMode="always" id="Rop-dq-3Ks">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YX5-t9-sYt">
                             <connections>
                                 <action selector="cancel:" destination="iWH-YI-hfp" id="9pV-4h-KxD"/>
@@ -314,9 +314,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-Oq-EKn">
-                                <rect key="frame" x="187" y="446.5" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-Oq-EKn">
+                                <rect key="frame" x="187" y="447.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BEp-IA-hxt"/>
+                                    <constraint firstAttribute="width" constant="40" id="Hfe-Vl-8lI"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-Ug-2fw">
                                 <rect key="frame" x="20" y="203" width="374" height="32"/>
@@ -354,6 +357,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lND-N6-sDY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V9O-Oq-EKn" firstAttribute="centerY" secondItem="ipk-8L-vuM" secondAttribute="centerY" constant="20" id="aWw-aX-kce"/>
+                            <constraint firstItem="V9O-Oq-EKn" firstAttribute="centerX" secondItem="ipk-8L-vuM" secondAttribute="centerX" id="s57-jR-d2t"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7zI-RQ-pyi">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Laa-5Z-3eQ">
@@ -384,7 +391,7 @@
             </objects>
             <point key="canvasLocation" x="2547.826086956522" y="-271.20535714285711"/>
         </scene>
-        <!--Places-->
+        <!--Table View Controller-->
         <scene sceneID="MUF-hr-YM7">
             <objects>
                 <viewController id="CJ5-FJ-Sll" customClass="TableViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
@@ -507,7 +514,7 @@
                             <constraint firstItem="YPC-X6-ieK" firstAttribute="top" secondItem="L7S-Kr-MyF" secondAttribute="top" id="whD-R5-14p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Places" id="e6B-jS-V7h">
+                    <navigationItem key="navigationItem" id="e6B-jS-V7h">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="barButtonItem:06n-2N-uxh:image" id="06n-2N-uxh">
                             <connections>
                                 <action selector="reversedSorting:" destination="CJ5-FJ-Sll" id="AvP-rx-8u0"/>
@@ -556,7 +563,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="GYM-Tv-Ojk"/>
-        <segue reference="6Dc-ha-IYY"/>
+        <segue reference="3HO-Ka-SEU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
