@@ -10,6 +10,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+                overrideUserInterfaceStyle = .light
+            }
         places = realm.objects(Place.self)
         searchControoller.searchResultsUpdater = self
         searchControoller.obscuresBackgroundDuringPresentation = false

@@ -154,7 +154,7 @@ class MapManager{
         let center = getCenterLocation(for: mapView)
         guard center.distance(from: location) > 5 else { return }
         
-//        closure(center)
+        closure(center)
     }
     
     private func resetMapView(withNew dirations: MKDirections, mapView: MKMapView){

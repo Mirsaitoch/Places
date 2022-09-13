@@ -48,6 +48,9 @@ class MapViewController: UIViewController{
     @IBOutlet var gotoButton: UIButton!
     
     override func viewDidLoad() {
+        if #available(iOS 13.0, *) {
+                overrideUserInterfaceStyle = .light
+            }
         super.viewDidLoad()
         MapView.delegate = self
         setupMapView()
