@@ -315,18 +315,22 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-qo-6Qz">
-                                <rect key="frame" x="132" y="752" width="150" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLC-qo-6Qz">
+                                <rect key="frame" x="132" y="747.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7ic-Mo-y2h"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="done"/>
                                 <connections>
                                     <action selector="getAddress" destination="5OE-Py-So4" eventType="touchUpInside" id="tUu-Ns-SWW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-yV-Ikp">
-                                <rect key="frame" x="132" y="752" width="150" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-yV-Ikp">
+                                <rect key="frame" x="132" y="747.5" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HNo-1y-DYV"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Let's go!"/>
                                 <connections>
@@ -337,8 +341,14 @@
                         <viewLayoutGuide key="safeArea" id="lND-N6-sDY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iLC-qo-6Qz" firstAttribute="top" secondItem="V9O-Oq-EKn" secondAttribute="bottom" constant="259.5" id="3Bt-Sd-GAh"/>
+                            <constraint firstItem="lND-N6-sDY" firstAttribute="trailing" secondItem="iLC-qo-6Qz" secondAttribute="trailing" constant="132" id="EtT-Es-UL1"/>
+                            <constraint firstItem="hoV-yV-Ikp" firstAttribute="leading" secondItem="lND-N6-sDY" secondAttribute="leading" constant="132" id="QON-sq-f4G"/>
                             <constraint firstItem="V9O-Oq-EKn" firstAttribute="centerY" secondItem="ipk-8L-vuM" secondAttribute="centerY" constant="20" id="aWw-aX-kce"/>
+                            <constraint firstItem="iLC-qo-6Qz" firstAttribute="leading" secondItem="lND-N6-sDY" secondAttribute="leading" constant="132" id="bYJ-dN-dxM"/>
+                            <constraint firstItem="lND-N6-sDY" firstAttribute="trailing" secondItem="hoV-yV-Ikp" secondAttribute="trailing" constant="132" id="kOG-IM-U2u"/>
                             <constraint firstItem="V9O-Oq-EKn" firstAttribute="centerX" secondItem="ipk-8L-vuM" secondAttribute="centerX" id="s57-jR-d2t"/>
+                            <constraint firstItem="hoV-yV-Ikp" firstAttribute="top" secondItem="V9O-Oq-EKn" secondAttribute="bottom" constant="259.5" id="xu4-8e-B2u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7zI-RQ-pyi">
