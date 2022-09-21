@@ -234,35 +234,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mna-wC-luI" customClass="RatingControl" customModule="Places" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="251.99999999999997" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vsD-w8-NrR" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
                                                     <rect key="frame" x="81" y="48" width="252" height="44"/>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="270" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Zs-VH-I1y" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="72" y="45" width="270" height="50"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                                            <real key="value" value="50"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Mna-wC-luI" firstAttribute="centerY" secondItem="CnX-nM-UOC" secondAttribute="centerY" id="fw3-69-CFD"/>
-                                                <constraint firstItem="7Zs-VH-I1y" firstAttribute="centerX" secondItem="CnX-nM-UOC" secondAttribute="centerX" id="jiV-LY-1oK"/>
-                                                <constraint firstItem="7Zs-VH-I1y" firstAttribute="centerY" secondItem="CnX-nM-UOC" secondAttribute="centerY" id="kQs-cE-pbL"/>
-                                                <constraint firstItem="Mna-wC-luI" firstAttribute="centerX" secondItem="CnX-nM-UOC" secondAttribute="centerX" id="w2t-ug-vCo"/>
+                                                <constraint firstItem="vsD-w8-NrR" firstAttribute="centerX" secondItem="CnX-nM-UOC" secondAttribute="centerX" id="1EP-al-cgZ"/>
+                                                <constraint firstItem="vsD-w8-NrR" firstAttribute="centerY" secondItem="CnX-nM-UOC" secondAttribute="centerY" id="uNq-tk-XoH"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="Mna-wC-luI"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -288,13 +267,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ImageOFPlace" destination="PaA-kK-ra6" id="4K9-HE-Gq5"/>
-                        <outlet property="cosmosView" destination="7Zs-VH-I1y" id="WJd-A5-BHI"/>
                         <outlet property="mapButton" destination="Hog-NS-Xfa" id="2Rh-Fh-RYW"/>
                         <outlet property="placeImage" destination="PaA-kK-ra6" id="64m-7o-TfI"/>
                         <outlet property="placeLocation" destination="4RK-qq-DcL" id="1Rc-sa-aBz"/>
                         <outlet property="placeName" destination="fDE-ui-YwS" id="0bT-OC-Viq"/>
                         <outlet property="placeType" destination="zSC-qJ-h6f" id="Cep-KF-0Id"/>
-                        <outlet property="ratingControl" destination="Mna-wC-luI" id="GCe-hR-edP"/>
+                        <outlet property="ratingControl" destination="vsD-w8-NrR" id="U59-tx-bUE"/>
                         <outlet property="save" destination="ppW-BW-Pm9" id="kWQ-1Y-G8t"/>
                     </connections>
                 </tableViewController>
@@ -555,8 +533,8 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="7Zs-VH-I1y">
-            <size key="intrinsicContentSize" width="270" height="50"/>
+        <designable name="vsD-w8-NrR">
+            <size key="intrinsicContentSize" width="251.99999999999997" height="44"/>
         </designable>
         <designable name="wyz-Mb-jWF">
             <size key="intrinsicContentSize" width="95" height="20"/>

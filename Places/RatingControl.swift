@@ -19,17 +19,6 @@ import AuthenticationServices
         }
     }
     
-    @IBInspectable var starSize :CGSize = CGSize(width: 44.0, height: 44.0){
-        didSet{
-            setupButton()
-        }
-    }
-    @IBInspectable var starCount :Int = 5{
-        didSet{
-            setupButton()
-        }
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
@@ -41,14 +30,28 @@ import AuthenticationServices
         setupButton()
     }
     
+    @IBInspectable var starSize :CGSize = CGSize(width: 44.0, height: 44.0){
+        didSet{
+            setupButton()
+        }
+    }
+    @IBInspectable var starCount :Int = 5{
+        didSet{
+            setupButton()
+        }
+    }
+
+    
+    
     @objc func ratingTapped(button: UIButton){
         guard let index = arrBtn.firstIndex(of: button) else {return}
+
+        let selectedRating = index + 1
         
-        if index + 1 == rating{
+        if selectedRating == rating {
             rating = 0
-        }
-        else{
-            rating = index + 1
+        } else {
+            rating = selectedRating
         }
     }
     
@@ -59,15 +62,18 @@ import AuthenticationServices
             btn.removeFromSuperview()
         }
         
+        arrBtn.removeAll()
+
+        
         let bundle = Bundle(for: type(of: self))
         let fillStar = UIImage(named: "filledStar", in:bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in:bundle, compatibleWith: self.traitCollection)
         let tapStar = UIImage(named: "highlightedStar", in:bundle, compatibleWith: self.traitCollection)
 
-        arrBtn.removeAll()
         
         for _ in 0..<starCount{
             let button = UIButton()
+            
             button.setImage(emptyStar, for: .normal)
             button.setImage(fillStar, for: .selected)
             button.setImage(tapStar, for: .highlighted)
@@ -85,6 +91,7 @@ import AuthenticationServices
             arrBtn.append(button)
         }
         
+        updateRatingStatus()
     }
     
     private func updateRatingStatus(){

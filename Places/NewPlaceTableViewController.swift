@@ -7,9 +7,7 @@ class NewPlaceTableViewController: UITableViewController {
     var imageIsChanged = false
     
     var currentPlace: Place!
-    
-    var currentRating = 0.0
-    
+        
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var save: UIBarButtonItem!
     @IBOutlet weak var placeName: UITextField!
@@ -32,11 +30,7 @@ class NewPlaceTableViewController: UITableViewController {
         save.isEnabled = false
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
-
-        cosmosView.settings.fillMode = .full
-        cosmosView.didTouchCosmos = {rating in
-            self.currentRating  = rating}
-        
+                
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .bold, scale: .large)
 
         let largeBoldDoc =  UIImage(systemName: "map.circle", withConfiguration: largeConfig)
@@ -45,16 +39,21 @@ class NewPlaceTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
         if indexPath.row == 0{
+            
             let actionSheet = UIAlertController(title: nil , message: "choose where to upload the photo from", preferredStyle: .actionSheet)
+            
             let camera = UIAlertAction(title: "Camera", style: .default){_ in
                 self.chooseImage(source: .camera)
             }
+           
             let photo = UIAlertAction(title: "Photo", style: .default){ _ in
                 self.chooseImage(source: .photoLibrary)
             }
+            
+           
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+            
             actionSheet.addAction(camera)
             actionSheet.addAction(photo)
             actionSheet.addAction(cancel)
@@ -68,7 +67,7 @@ class NewPlaceTableViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         guard
         let identifier = segue.identifier,
         let mapVC = segue.destination as? MapViewController
@@ -83,44 +82,37 @@ class NewPlaceTableViewController: UITableViewController {
             mapVC.place.type = placeType.text!
             mapVC.place.imageData = placeImage.image?.pngData()
         }
-        
-
-
     }
     func saveNewPlace(){
         let image = imageIsChanged ? placeImage.image :  #imageLiteral(resourceName: "imagePlaceholder")
-        
         let imageData = image?.pngData()
-        
         let newPlace = Place(name: placeName.text!,
                              location: placeLocation.text,
                              type: placeType.text,
                              imageData: imageData,
-                             rating: currentRating)
-        
+                             rating: Double(ratingControl.rating))
+        print(newPlace.rating)
         if currentPlace != nil {
             try! realm.write {
+                print(newPlace.rating)
                 currentPlace?.name = newPlace.name
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
-                currentPlace?.imageData = newPlace.imageData
                 currentPlace?.rating = newPlace.rating
-                print(newPlace.rating)
-                print(currentRating)
+                currentPlace?.imageData = newPlace.imageData
             }
-        } else {
+        }
+        else{
             StorageManager.saveObject(newPlace)
         }
     }
     
     
-    
     private func setupEditScreen(){
         if currentPlace != nil{
-            imageIsChanged = true
             
+            imageIsChanged = true
             guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
-
             navigationItem.leftBarButtonItem = nil
             save.isEnabled = true
             placeImage.image = image
@@ -128,8 +120,7 @@ class NewPlaceTableViewController: UITableViewController {
             placeName.text = currentPlace?.name
             placeType.text = currentPlace?.type
             placeLocation.text = currentPlace?.location
-            cosmosView?.rating = currentPlace.rating
-            print(currentPlace.rating)
+            ratingControl.rating = Int(currentPlace.rating)
         }
     }
     
@@ -137,8 +128,6 @@ class NewPlaceTableViewController: UITableViewController {
         dismiss(animated: true)
     }
 }
-
-
 
 extension NewPlaceTableViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -173,7 +162,6 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
         ImageOFPlace.contentMode = .scaleAspectFill
         ImageOFPlace.clipsToBounds = true
         imageIsChanged = true
-
         dismiss(animated: true)
     }
     
